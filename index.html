@@ -8,18 +8,20 @@
   <script src="js/app.js" charset="utf-8"></script>
 </head>
 <body>
-  <header>
-    <div class="middle"></div>
-    <h1>Invisible Wall</h1>
-    <h4>By : Gianmaria Carrodano</h4>
-    <div class="gameContainer" id="gameContainer"></div>
-  </header>
-  <div class="board">
+  <main>
+    <header>
+        <h1>Invisible Wall</h1>
+    </header>
+    <div class="left2">
+      <button id="startgame">Start Game</button>
+    </div>
     <div class="left">
-      <button id="question" type="input" name="button">Question</button>
+      <div id="timer">00:10</div>
+        <button id="question" type="input" name="button">Question</button>
       <div id="username" class="input">
-          <input type="text" name="answer" placeholder="">
-        </div>
+          <input type="text" name="answer" placeholder="Type answer">
+      </div>
+      <button id="submit" type="button" name="submit">Submit</button>
     </div>
     <div class="right">
       <ul>
@@ -34,7 +36,7 @@
          <li class="button"></li>
       </ul>
     </div>
-  </div>
-
+  </main>
+<footer><p>Made with &hearts; GA student <span>Gianmaria Carrodano</span> </p></footer>
 </body>
 </html>
