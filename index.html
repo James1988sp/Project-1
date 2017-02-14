@@ -6,11 +6,23 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/app.js" charset="utf-8"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <main>
     <header>
         <h1>Invisible Wall</h1>
+    <div class="levels">
+        <form class="menu-form" action="index.html" method="post">
+          <select>
+            <option value="INTRO" placeholder="Please choose a level:" disabled>Please choose a level:</option>
+            <option value="ELEMENTAR">ELEMENTAR</option>
+            <option selected value="MEDUIM">NORMAL</option>
+            <option value="GENIUS">GENIUS</option>
+            <option value="SAVANT">SAVANT</option>
+          </select>
+        </form>
+      </div>
     </header>
     <div class="left2">
       <button id="startgame">Start Game</button>

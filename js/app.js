@@ -6,12 +6,19 @@ $(() => {
   const $question = $('#question');
   const $submit = $('#submit');
   const $answer = $('input[type="text"]');
+  let timerId;
   let time = 10;
   let computerAnswer = null;
-  var $cells = $('li');
+  let $cells = $('li');
+
+  const cellIndex = [];
+  let previousCell = null;
+  let randomCells = null;
 
   $start.on('click', startGame);
   $submit.on('click', checkAnswer);
+
+
 
   function startGame() {
     $('.left2').hide();
@@ -21,77 +28,68 @@ $(() => {
   }
 
   function startTimer() {
-      //resetGame();
-      //toggleBoard();
-      //generateSum();
-      //$timer.addClass('active');
-
-    const timerId = setInterval(() => {
+    timerId = setInterval(() => {
       time--;
       $timer.html(time);
+      if (!time) {
+        console.log('Finish');
+        clearInterval(timerId);
+        gameOver();// gif animata looser
+      }
     }, 1000);
-
-    setTimeout(() => {
-      clearInterval(timerId);
-      $question.html('Game Over!');
-      $submit.html('Play again?');
-    }, 10000);
   }
+
+  function playerHasWon() {
+    return $('li.hidden').length === $('li').length;
+  }
+
 
   function checkAnswer() {
     const  userAnswer = parseFloat($answer.val());
-    const randomCells = $cells.eq(Math.floor(Math.random() * $cells.length));// sto dando hide una cella a caso da un array pero a volte riseleziona la stessa cella 
+    $cells = $('li').not('.hidden');
+    randomCells = $cells.eq(Math.floor(Math.random() * $cells.length));
+    previousCell = cellIndex.push(randomCells);
+    console.log(cellIndex[0]);
     if (userAnswer === computerAnswer) {
-      randomCells.hide();
-    //  $cells.eq(Math.floor(Math.random() * $cells.length)).hide;
-    } else if (userAnswer !== computerAnswer){
-      randomCells.show();
+      randomCells.addClass('hidden');
+
+      if(playerHasWon()) {
+        clearInterval(timerId);
+        return $question.html('You Won!'); // DEVO METTERE GIF ANIMATA!
+      }
+
+      generateSum();
+      time += 3;
+
+    } else if (userAnswer !== computerAnswer) {
+      previousCell = cellIndex[0];
+      previousCell.removeClass('hidden');
+      console.log(cellIndex);
+    } else {
+      clearInterval(timerId);
     }
-    generateSum();
+    $answer.val('');
   }
 
+  function gameOver() {
+    clearInterval(timerId);
+    $question.html('Game Over!');
+    $submit.html('Play again?');
+  }
 
   function generateSum() {
-    //$answer.val('');
     const first = Math.ceil(Math.random() * 10);
     const second = Math.ceil(Math.random() * 10);
     $question.html(`${first} + ${second} = ?`);
     computerAnswer = first + second;
   }
 
+  function resetGame() {
+    time === 10;
+    $timer.html(10);
+  }
+  // $reset.on('click', resetGame);
+
+
+
 });
-
-
-
-/*
-
-$cells = $('li');
-let userAnswer = '';
-let computerAnswer = '';
-let operator = ['+', '-', '/', '*'];
-//Element needed to create a question
-const firstNumber = Math.ceil(Math.random() * 10);
-const secondNumber = Math.ceil(Math.random() * 10);
-const operator = Math.form(Math.random() + operator.length);
-
-//function to check if userAnswer === computerAnswer
-function checkForMatch() {
-     const userAnswer = parseFloat($input.val());
-     if (computerAnswer === userAnswer) {
-       $feedback.html('Correct!');
-       userScore++;
-     } else {
-       $feedback.html('Incorrect!');
-       userScore--;
-     }
-     $score.html(userScore);
-     generateSum();
-
-
-
-//function to hide one square each time userAnswer === computerAnswer
-$cells = $('li');
-$cells.eq(Math.floor(Math.random() * $cells.length));
-$cells.eq(Math.floor(Math.random() * $cells.length)).add.class('hidden');
-
-*/
