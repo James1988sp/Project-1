@@ -1,3 +1,4 @@
+
 *, *:after, *:before {
 	box-sizing: border-box;
 }
@@ -14,7 +15,6 @@ p {
 .left {
   float: left;
   width: 50%;
-  /*height: 600px;*/
   -moz-border-radius: 20px;
   text-align: center;
   display: none;
@@ -24,7 +24,6 @@ p {
 .left2 {
   float: left;
   width: 50%;
-  /*height: 600px;*/
   -moz-border-radius: 20px;
   text-align: center;
   display: block;
@@ -48,16 +47,18 @@ p {
   color: lime;
 }
 
+#gif {
+  display: none;
+}
+
 .hidden {
   opacity: 0;
 }
 
-
-
 button#question {
   text-align: center;
-  width: 350px;
-  height: 150px;
+  width: 200px;
+  height: 100px;
   margin: 20px auto;
   font-size: 35px;
   border-radius: 10px;
@@ -74,8 +75,8 @@ button#submit {
 }
 
 #startgame {
-  width: 450px;
-  height: 450px;
+  width: 350px;
+  height: 350px;
   margin: 20px 0;
   font-size: 40px;
   background-color: lime;
@@ -89,6 +90,10 @@ input {
   margin: 20px auto;
   font-size: 20px;
   border-radius: 10px;
+}
+
+form {
+  margin: 0 auto;
 }
 
 body {
@@ -108,15 +113,11 @@ body {
     overflow: scroll;
 }
 
-form {
-  width: 200px;
-  height: 75px;
-  position: fixed;
-  right: 0px;
-}
-
 select {
   background: lime;
+  position: fixed;
+  right: 20px;
+  top: 20px;
 }
 
 header {
@@ -124,7 +125,7 @@ header {
 }
 
 li {
-
+  margin: auto;
   display: inline-block;
   width: 32%;
   height: 32%;
@@ -132,8 +133,6 @@ li {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-
-
 }
 
 li.hidden {
@@ -142,14 +141,13 @@ li.hidden {
 }
 
 ul {
+  text-align: center;
   width: 90%;
   height: 500px;
   background-image: url('http://jchalfant.com/web/wp-content/uploads/2011/11/riddler.jpg');
   background-position: center center;
   background-size: cover;
-  margin-bottom: 16px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 16px auto;
   text-align: center;
   max-width: 450;
 }
@@ -168,7 +166,7 @@ footer {
   width: 100%;
   left: 5px;
   bottom: 5px;
-  position: fixed;;
+  position: relative;
 }
 
 .middle {
@@ -178,7 +176,6 @@ footer {
 h4 {
 margin-top: 0px;
 font-family: cursive;
-
 }
 
 .levels {
@@ -187,7 +184,6 @@ font-family: cursive;
   border-radius: 10px;
   font-size: 35px;
   position: fixed;;
-
 }
 
 #botLeft {
@@ -258,14 +254,18 @@ font-family: cursive;
   }
 
   button#question {
-    width: 300px;
-
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    margin: 20px auto;
+    font-size: 35px;
+    border-radius: 10px;
+    background-color: Snow;
   }
 
   button#submit {
     width: 150px;
     font-size: 12px;
-
   }
 
   #startgame {
@@ -275,6 +275,10 @@ font-family: cursive;
     font-size: 40px;
     background-color: lime;
     color: black;
+  }
+
+  form {
+    margin: 20px auto;
   }
 
   input {
@@ -289,5 +293,10 @@ font-family: cursive;
   ul{
     height: 45vh;
   }
+
+h1 {
+  text-align: center;
+  margin-top: 45px;
+}
 
 }

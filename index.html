@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="js/app.js" charset="utf-8"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <main>
@@ -14,12 +14,11 @@
         <h1>Invisible Wall</h1>
     <div class="levels">
         <form class="menu-form" action="index.html" method="post">
-          <select>
+          <select id="stage">
             <option value="INTRO" placeholder="Please choose a level:" disabled>Please choose a level:</option>
-            <option value="ELEMENTAR">ELEMENTAR</option>
-            <option selected value="MEDUIM">NORMAL</option>
-            <option value="GENIUS">GENIUS</option>
-            <option value="SAVANT">SAVANT</option>
+            <option selected value="normal" class="level">NORMAL</option>
+            <option value="genius" class="level">GENIUS</option>
+            <option value="savant" class="level">SAVANT</option>
           </select>
         </form>
       </div>
@@ -31,7 +30,9 @@
       <div id="timer">00:10</div>
         <button id="question" type="input" name="button">Question</button>
       <div id="username" class="input">
+        <form>
           <input type="text" name="answer" placeholder="Type answer">
+        </form>
       </div>
       <button id="submit" type="button" name="submit">Submit</button>
     </div>
@@ -50,5 +51,9 @@
     </div>
   </main>
 <footer><p>Made with &hearts; GA student <span>Gianmaria Carrodano</span> </p></footer>
+<audio loop  id="batman" src="sounds/intro.mp3"></audio>
+<audio id="robin" src="sounds/intro2.mp3"></audio>
+<audio id="gameover" src="sounds/gameover.mp3"></audio>
+<img id="gif" src="images/giphy.gif" alt="batman immagine">
 </body>
 </html>
