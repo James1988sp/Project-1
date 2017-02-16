@@ -7,14 +7,12 @@ $(() => {
   const $submit = $('#submit');
   const $answer = $('input[type="text"]');
   const $op = ['+', '-', '*', '/'];
-  const $level = $('.level');
   const $select = $('select');
   let chosenLevel = 'normal';
   let timerId;
   let time = 10;
   let computerAnswer = null;
   let $cells = $('li');
-  const cellIndex = [];
   let randomCells = null;
   let operator = '+';
   let first = null;
@@ -23,7 +21,7 @@ $(() => {
 
 
   $start.on('click', startGame);
-  $submit.on('click', (e)=> {
+  $submit.on('click', (e) => {
     if($(e.target).text() === 'Submit') {
       checkAnswer();
     } else {
@@ -32,6 +30,7 @@ $(() => {
 
   });
 
+// Function that start the game, check hide left and left2 timer start create questions and #batman play
   function startGame() {
     check();
     $submit.html('Submit');
@@ -42,30 +41,28 @@ $(() => {
     $('#batman').get(0).play();
 
   }
-
+// Function that make timer start and also create loose condition #gameover play
   function startTimer() {
     timerId = setInterval(() => {
       time--;
       $timer.html(time);
       if (!time) {
-        console.log('Finish');
         clearInterval(timerId);
         gameOver();
         $('#gameover').get(0).play();
       }
     }, 1000);
   }
-
+ // Function that create win condition
   function playerHasWon() {
     return $('li.hidden').length === $('li').length;
   }
-
+ // Function that check userAnswer and computerAnswer
   function checkAnswer() {
     const  userAnswer = parseFloat($answer.val());
     $cells = $('li').not('.hidden');
-    //$thiscell = $cells.not('hidden');
     randomCells = $cells.eq(Math.floor(Math.random() * $cells.length));
-    console.log(cellIndex[0]);
+
     if (userAnswer === computerAnswer) {
       randomCells.addClass('hidden');
       $('#robin').get(0).play();
@@ -88,32 +85,19 @@ $(() => {
     }
     $answer.val('');
   }
-
+ // Function that end the game
   function gameOver() {
     clearInterval(timerId);
     $question.html('Game Over!');
     $submit.html('Play again?');
 
   }
-
+ // Funnction that check which level you choose
   function check() {
     chosenLevel = $select.val();
-    console.log(chosenLevel);
-    if (chosenLevel==='normal') {
-      return generateSum('normal');
-    } else if (chosenLevel==='genius') {
-      return generateSum('genius');
-    } else if (chosenLevel==='savant') {
-      return generateSum('savant');
-    }
+    return generateSum(chosenLevel);
   }
-
-  // function  sumLev() {
-  //  //if = $('select[name=selector]').val();
-  // }
-  // document.getElementsById("stage")[0].onchange = function() {
-  //   document.getElementsByid("stage")[0].submit();
-
+ // Function that generate questions based on choosen level
   function generateSum() {
     operator = $op[Math.floor(Math.random() * $op.length)];
     if (chosenLevel === 'normal'){
@@ -151,11 +135,12 @@ $(() => {
     $cells = $('li');
     $cells.removeClass('hidden');
     startGame();
-    //$('li.button');
-    //removeClass$('hidden').length === $('li').length;
+
   }
 
   $('form').on('submit', (e) => {
     e.preventDefault();
   });
+
+
 });

@@ -10,6 +10,9 @@ main {
 
 p {
   color: lime;
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
 }
 
 .left {
@@ -63,6 +66,7 @@ button#question {
   font-size: 35px;
   border-radius: 10px;
   background-color: Snow;
+  color: black;
 }
 
 button#submit {
@@ -72,15 +76,19 @@ button#submit {
   margin: 20px auto;
   font-size: 20px;
   border-radius: 50px;
+  color: lime;
 }
 
 #startgame {
-  width: 350px;
-  height: 350px;
+  width: 200px;
+  height: 150px;
   margin: 20px 0;
   font-size: 40px;
+  font-family: Impact, Charcoal, sans-serif;
   background-color: lime;
-  color: black;
+  color: snow;
+  border-radius: 30px;
+  position: relative;
 }
 
 input {
@@ -111,6 +119,10 @@ body {
     overflow:hidden;
     background-color: black;
     overflow: scroll;
+    background-image: url('../images/giphy.gif');
+    background-size: cover;
+    height: 100vh;
+
 }
 
 select {
@@ -125,19 +137,22 @@ header {
 }
 
 li {
-  margin: auto;
+  margin-right: 2px;
+  margin-left: auto;
   display: inline-block;
   width: 32%;
-  height: 32%;
+  height: 33.33%;
   background-image: url("https://s-media-cache-ak0.pinimg.com/736x/f1/e9/87/f1e9876014b6594f10a869a454896894.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+
 }
 
 li.hidden {
   background-color: transparent;
   text-align: center;
+  background-position: center center;
 }
 
 ul {
@@ -149,10 +164,14 @@ ul {
   background-size: cover;
   margin: 16px auto;
   text-align: center;
-  max-width: 450;
+  max-width: 400;
+  margin: 0;
+  padding: 0;
+
 }
 
 h1 {
+  font-family: Impact, Charcoal, sans-serif ;
   font-size: 36px;
   line-height: 40px;
   color: lime;
@@ -167,6 +186,7 @@ footer {
   left: 5px;
   bottom: 5px;
   position: relative;
+  text-align: right;
 }
 
 .middle {
@@ -186,65 +206,6 @@ font-family: cursive;
   position: fixed;;
 }
 
-#botLeft {
-  border-top: 2px solid lime;
-  border-right: 2px solid lime;
-  border-left: 2px solid lime;
-  border-bottom: 2px solid lime;
-}
-
-#botRight {
-  border-left: 2px solid lime;
-  border-top: 2px solid lime;
-  border-bottom: 2px solid lime;
-  border-right: 2px solid lime;
-}
-
-#botMid {
-  border-left: 2px solid lime;
-  border-top: 2px solid lime;
-  border-right: 2px solid lime;
-  border-bottom: 2px solid lime;
-}
-
-#midLeft {
-  border-top: 2px solid lime;
-  border-right: 2px solid lime;
-  border-bottom: 2px solid lime;
-  border-left: 2px solid lime;
-}
-
-#midMid {
-  border: 2px solid lime;
-}
-
-#midRight {
-  border-left: 2px solid lime;
-  border-top: 2px solid lime;
-  border-bottom: 2px solid lime;
-  border-right: 2px solid lime;
-}
-
-#topLeft {
-  border-right: 2px solid lime;
-  border-bottom: 2px solid lime;
-  border-left: 2px solid lime;
-  border-top: 2px solid lime;
-}
-
-#topMid {
-  border-left: 2px solid lime;
-  border-right: 2px solid lime;
-  border-bottom: 2px solid lime;
-  border-top: 2px solid lime;
-}
-
-#topRight {
-  border-left: 2px solid lime;
-  border-bottom: 2px solid lime;
-  border-top: 2px solid lime;
-  border-right: 2px solid lime;
-}
 
 @media only screen and (max-width: 767px) {
 
@@ -297,6 +258,4 @@ font-family: cursive;
 h1 {
   text-align: center;
   margin-top: 45px;
-}
-
 }
