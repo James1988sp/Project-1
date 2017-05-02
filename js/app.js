@@ -30,7 +30,7 @@ $(() => {
 
   });
 
-// Function that start the game, check hide left and left2 timer start create questions and #batman play
+// Function that start the game, check and hide left and left2 timer start create questions and #batman song play
   function startGame() {
     check();
     $submit.html('Submit');
@@ -85,19 +85,19 @@ $(() => {
     }
     $answer.val('');
   }
- // Function that end the game
+ // Function that  run the end of the game
   function gameOver() {
     clearInterval(timerId);
     $question.html('Game Over!');
     $submit.html('Play again?');
 
   }
- // Funnction that check which level you choose
+ // Function that check which level you choose and create questions based on choosen level
   function check() {
     chosenLevel = $select.val();
     return generateSum(chosenLevel);
   }
- // Function that generate questions based on choosen level
+ // Function that generate questions
   function generateSum() {
     operator = $op[Math.floor(Math.random() * $op.length)];
     if (chosenLevel === 'normal'){
@@ -141,6 +141,5 @@ $(() => {
   $('form').on('submit', (e) => {
     e.preventDefault();
   });
-
 
 });
