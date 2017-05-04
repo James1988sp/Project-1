@@ -4,6 +4,9 @@ The {In}visible Wall
 
 If you want play it : https://fathomless-refuge-21877.herokuapp.com/
 
+
+![](.images/winPage.png)
+
 Rules
 
 It is a mathematical game on three different levels.
