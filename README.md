@@ -29,7 +29,7 @@ A correct answer
 Game over
 
 # Technologies
-HTML 5, CSS and jQuery were used to create this game.
+HTML 5, CSS, JavaScript, jQuery and Heroky were used to create this game.
 ClipConverter was used to load the sounds.
 
 # Problems & challenges
