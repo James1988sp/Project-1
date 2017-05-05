@@ -1,13 +1,13 @@
-GA WDI London - Project-1
+# GA WDI London - Project-1
 
-The {In}visible Wall
+# The {In}visible Wall
 
 If you want play it : https://fathomless-refuge-21877.herokuapp.com/
 
 
 ![](./images/winPage.png)
 
-Rules
+# Rules
 
 It is a mathematical game on three different levels.
 There is a timer that triggers when you click on start game button, the questions are directly proportionate to the level you choose, do not try the savant mode.
@@ -15,7 +15,7 @@ Whenever the answer is correct a cell that covers the image to be discovered wil
 The win condition is  be able to see the hidden image.
 The lose condition is to get the timer to zero.
 
-Development
+# Development
 
 The code is pretty much on the function that triggers the start of the game and  the timer, as mentioned before and hides the div left2 and left to display the submit button, answer button  and the button where question is displayed.
 The other functions that develop the game is the function that allows me to generate the timer with countdown to zero, then follows the function that allows me to declare victory if all the cells were made to disappear. Then the function that checks the correctness of the response with the use of if and within that other triggers with jquery html display in case you want to play again.Subsequently if the answer is correct others questions will be create allowing you to advance in the game. Finally the function that determines the end of the game when the timer ends.
@@ -28,11 +28,11 @@ The beginning of the game loop
 A correct answer
 Game over
 
-
+# Technologies
 HTML 5, CSS and jQuery were used to create this game.
 ClipConverter was used to load the sounds.
 
-Problems & challenges
+# Problems & challenges
 
 The greatest difficulty I encountered in the project has been able to manipulate time timer  and create three different levels but particularly be able to make disappear and reappear randomly cells.
 
